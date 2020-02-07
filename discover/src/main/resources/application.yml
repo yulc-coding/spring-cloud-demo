@@ -9,6 +9,7 @@ eureka:
     # 发送心跳间隔，默认30，官方不建议修改
     lease-renewal-interval-in-seconds: 30
   client:
+    # 防止自己注册自己
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:

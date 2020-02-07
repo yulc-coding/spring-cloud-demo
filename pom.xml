@@ -13,6 +13,7 @@
         <module>discover</module>
         <module>zuul</module>
         <module>auth</module>
+        <module>demos</module>
     </modules>
 
     <properties>
