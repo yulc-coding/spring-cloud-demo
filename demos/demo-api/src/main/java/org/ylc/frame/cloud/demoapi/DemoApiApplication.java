@@ -1,13 +1,13 @@
-package org.ylc.frame.cloud.auth;
+package org.ylc.frame.cloud.demoapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuthApplication {
+public class DemoApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(DemoApiApplication.class, args);
     }
 
 }
