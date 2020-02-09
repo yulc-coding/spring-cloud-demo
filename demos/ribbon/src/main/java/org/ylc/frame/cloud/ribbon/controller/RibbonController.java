@@ -1,5 +1,7 @@
 package org.ylc.frame.cloud.ribbon.controller;
 
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,13 +22,29 @@ public class RibbonController {
 
     private final RestTemplate restTemplate;
 
-    public RibbonController(RestTemplate restTemplate) {
+    private final LoadBalancerClient loadBalancerClient;
+
+    public RibbonController(RestTemplate restTemplate, LoadBalancerClient loadBalancerClient) {
         this.restTemplate = restTemplate;
+        this.loadBalancerClient = loadBalancerClient;
     }
 
-    @GetMapping("/request/{msg}")
+    @GetMapping("/restTemplate/{msg}")
     public String forRequest(@PathVariable String msg) {
         return restTemplate.getForObject("http://demo-api/api/ribbon/" + msg, String.class);
     }
 
+    /**
+     * LoadBalancerClient 从 Eureka Client 获取服务注册列表信息的,并进行缓存
+     * 调用choose()方法时，会更具负载策略选择一个实例
+     *
+     * 也可以通过`ribbon.eureka.enabled=false`不从 Eureka Client 获取注册列表
+     * 这时需要自己维护一份祖册列表信息
+     *
+     */
+    @GetMapping("/loadBalancer")
+    public String loadBalancerTest() {
+        ServiceInstance instance = loadBalancerClient.choose("demo-api");
+        return instance.getHost() + ":" + instance.getPort();
+    }
 }
