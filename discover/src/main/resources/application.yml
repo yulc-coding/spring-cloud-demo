@@ -8,10 +8,14 @@ eureka:
     hostname: localhost
     # 发送心跳间隔，默认30，官方不建议修改
     lease-renewal-interval-in-seconds: 30
+    # 服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除，默认90
+    lease-expiration-duration-in-seconds: 90
   client:
     # 防止自己注册自己
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
+  server:
+    # 关闭自我保护模式
+    enable-self-preservation: false

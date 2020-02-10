@@ -4,9 +4,14 @@ spring:
   application:
     name: ribbon
 eureka:
+  instance:
+    # 以IP地址注册到服务中心，相互注册使用IP地址
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-ribbon:
-  eureka:
-    enabled: false
+# 不通过 Eureka Client 获取服务注册列表信息
+#ribbon:
+#  eureka:
+#    enabled: false

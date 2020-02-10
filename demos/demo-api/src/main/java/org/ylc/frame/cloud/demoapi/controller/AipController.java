@@ -1,10 +1,7 @@
 package org.ylc.frame.cloud.demoapi.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 代码全万行，注释第一行
@@ -24,9 +21,14 @@ public class AipController {
 
     @GetMapping("/ribbon/{msg}")
     public String forRibbon(@PathVariable String msg) {
-        System.out.printf("get message %s", msg);
+        System.out.printf("get message %s with ribbon", msg);
         return "from port: " + port;
     }
 
+    @GetMapping("/feign")
+    public String forFeign(@RequestParam(name = "msg") String msg) {
+        System.out.printf("get message %s with feign", msg);
+        return "from port: " + port;
+    }
 
 }

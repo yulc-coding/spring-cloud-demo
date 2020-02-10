@@ -30,17 +30,16 @@ public class RibbonController {
     }
 
     @GetMapping("/restTemplate/{msg}")
-    public String forRequest(@PathVariable String msg) {
+    public String restTemplateTest(@PathVariable String msg) {
         return restTemplate.getForObject("http://demo-api/api/ribbon/" + msg, String.class);
     }
 
     /**
      * LoadBalancerClient 从 Eureka Client 获取服务注册列表信息的,并进行缓存
      * 调用choose()方法时，会更具负载策略选择一个实例
-     *
+     * <p>
      * 也可以通过`ribbon.eureka.enabled=false`不从 Eureka Client 获取注册列表
      * 这时需要自己维护一份祖册列表信息
-     *
      */
     @GetMapping("/loadBalancer")
     public String loadBalancerTest() {

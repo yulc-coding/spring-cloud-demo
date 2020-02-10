@@ -1,9 +1,13 @@
 server:
-  port: 8080
+  port: 8088
 spring:
   application:
     name: demo-api
 eureka:
+  instance:
+    # 以IP地址注册到服务中心，相互注册使用IP地址
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
