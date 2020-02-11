@@ -13,7 +13,13 @@
 * value 为需要远程调用的服务的名称
 * configuration 指定配置类，默认为`FeignClientsConfiguration`，可以重写覆盖默认的Bean
 
-
+## Hystrix 熔断器
+```
+# 开启熔断机制
+feign:
+  hystrix:
+    enabled: true
+```
 
 
 

@@ -11,4 +11,14 @@
 
 ### ribbon-core: Ribbon的核心
 
+## Hystrix 熔断器
+* `@EnableHystrix`
 
+## Hystrix Dashboard
+* 依赖
+    * spring-boot-starter-actuator
+    * spring-cloud-starter-netflix-hystrix
+    * spring-cloud-starter-netflix-hystrix-dashboard
+* @EnableHystrixDashboard
+* http://localhost:8081/hystrix
+* http://localhost:8081/hystrix.stream
