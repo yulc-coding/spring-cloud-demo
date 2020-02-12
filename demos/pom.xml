@@ -18,8 +18,10 @@
     <name>demos</name>
 
     <modules>
+        <module>demo-api</module>
         <module>ribbon</module>
         <module>feign</module>
+        <module>turbine</module>
     </modules>
 
 </project>
