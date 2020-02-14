@@ -4,7 +4,28 @@ spring:
   application:
     name: zuul
 eureka:
+  instance:
+    # 以IP地址注册到服务中心，相互注册使用IP地址
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+# 配置路由
+zuul:
+  routes:
+    auth:
+      # 请求路径
+      path: /auth/**
+      # 对应请求的服务
+      serviceId: AUTH
+    demo-api:
+      path: /demp-api/**
+      serviceId: DEMO-API
+    ribbon:
+      path: /ribbon/**
+      serviceId: RIBBON
+    feign:
+      path: /feign/**
+      serviceId: FEIGN
 
