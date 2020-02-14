@@ -15,3 +15,10 @@ eureka:
 feign:
   hystrix:
     enabled: true
+# 选择要开放的页面节点  默认只开启了health、info两个节点
+# *代表开启所有，yml文件中 * 需要加双引号 -> "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
