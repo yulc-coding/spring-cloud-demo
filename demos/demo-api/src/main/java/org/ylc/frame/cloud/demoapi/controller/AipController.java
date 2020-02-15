@@ -21,13 +21,13 @@ public class AipController {
 
     @GetMapping("/ribbon/{msg}")
     public String forRibbon(@PathVariable String msg) {
-        System.out.printf("get message %s with ribbon", msg);
+        System.out.printf("get message %s with ribbon\n", msg);
         return "from port: " + port;
     }
 
     @GetMapping("/feign")
     public String forFeign(@RequestParam(name = "msg") String msg) {
-        System.out.printf("get message %s with feign", msg);
+        System.out.printf("get message %s with feign\n", msg);
         return "from port: " + port;
     }
 

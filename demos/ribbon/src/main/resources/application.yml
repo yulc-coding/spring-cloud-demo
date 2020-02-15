@@ -15,3 +15,8 @@ eureka:
 #ribbon:
 #  eureka:
 #    enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

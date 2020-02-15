@@ -5,13 +5,18 @@ spring:
     name: turbine
 eureka:
   instance:
-    # \u4EE5IP\u5730\u5740\u6CE8\u518C\u5230\u670D\u52A1\u4E2D\u5FC3\uFF0C\u76F8\u4E92\u6CE8\u518C\u4F7F\u7528IP\u5730\u5740
+    # 以IP地址注册到服务中心，相互注册使用IP地址
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipaddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 turbine:
-  # \u9700\u8981\u76D1\u63A7\u7684\u670D\u52A1\u540D
-  app-config-list: ribbon, feign
-  cluster-name-expression: default
+  # 需要监控的服务名，多个用 , 隔开
+  app-config: ribbon, feign
+  aggregator:
+    # 集群名称列表，默认 default
+    cluster-config: default
+  # 指定集群名称，注意这里需要以`new String("default")`的形式配置，
+  # 否则会报异常: Property or field 'default' cannot be found on object of type 'com.netflix.appinfo.InstanceInfo
+  cluster-name-expression: new String("default")
