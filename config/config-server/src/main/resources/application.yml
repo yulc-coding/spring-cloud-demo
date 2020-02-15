@@ -1,0 +1,10 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yulc-coding/spring-cloud-demo/tree/master/config/repo
