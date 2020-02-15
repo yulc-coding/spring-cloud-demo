@@ -7,4 +7,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/yulc-coding/spring-cloud-demo/tree/master/config/repo
+          uri: https://github.com/spring-cloud-samples/config-repo
+        #uri: https://github.com/yulc-coding/spring-cloud-demo/tree/master/config/repo

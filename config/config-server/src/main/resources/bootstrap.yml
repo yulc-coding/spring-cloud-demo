@@ -1,0 +1,12 @@
+# 类似application.yml，但用于应用程序上下文的引导阶段。修改启动行为
+spring:
+  application:
+    # 这里需要对应Config Server 所获取配置文件的{application}
+    name: foo
+  cloud:
+    config:
+      uri: http://localhost:8090/
+      # 对应{profile}
+      profile: dev
+      # git的分支
+      label: master
