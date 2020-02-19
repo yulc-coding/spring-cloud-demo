@@ -3,9 +3,17 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    # 本地文件
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/spring-cloud-samples/config-repo
-        #uri: https://github.com/yulc-coding/spring-cloud-demo/tree/master/config/repo
+        # 从本地获取配置文件
+        native:
+          search-locations: classpath:/repo
+          # 从git仓库获取配置文件，如果是私有仓库需要填写用户密码
+          # git:
+          # uri: https://github.com/spring-cloud-samples/config-repo
+          # password:
+          # username:
