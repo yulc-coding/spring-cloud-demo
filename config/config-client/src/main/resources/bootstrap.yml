@@ -4,11 +4,15 @@ spring:
     name: config-client
   cloud:
     config:
-      # 对应Config Server的地址
-      uri: http://localhost:8090/
-      # 对应{application}，不设置默认为：spring.application.name
-      name: demo
+      # 通过服务的方式去访问Config Server，推荐
+      discovery:
+        enabled: true
+        service-id: config-server
+      # 通过具体地址去访问 Config Server，不推荐
+      # uri: http://localhost:8090/
+      # 对应{application}，即配置文件的前缀，不设置默取：spring.application.name
+      name: config-client
       # 对应{profile}
       profile: dev
       # 从git仓库读取时仓库的分支，对应{label}
-      # label: master
+      label: master

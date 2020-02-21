@@ -1,19 +1,40 @@
 server:
   port: 8090
+eureka:
+  instance:
+    # 以IP地址注册到服务中心，相互注册使用IP地址
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# 从本地文件读取
+## 需要配置`spring.profiles.active=native`，默认会从resources路径下读取配置文件。
+## 通过`spring.cloud.config.server.native.search-locations`可以指定配置文件
+#spring:
+#  application:
+#    name: config-server
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        # 可以配置在项目下或者本地磁盘如: file:D:\\repo
+#        native:
+#          search-locations: classpath:/repo
+
+# 从 git读取配置文件
 spring:
   application:
     name: config-server
-  profiles:
-    # 本地文件
-    active: native
   cloud:
     config:
       server:
-        # 从本地获取配置文件
-        native:
-          search-locations: classpath:/repo
-          # 从git仓库获取配置文件，如果是私有仓库需要填写用户密码
-          # git:
-          # uri: https://github.com/spring-cloud-samples/config-repo
-          # password:
+        # 从git仓库获取配置文件，如果是私有仓库需要填写用户密码
+        git:
+          uri: https://github.com/yulc-coding/spring-cloud-demo
+          # git仓库地址下的相对地址 多个用逗号","分割
+          search-paths: /repo
           # username:
+          # password:
