@@ -28,6 +28,11 @@ eureka:
 spring:
   application:
     name: config-server
+  # 用户认证
+  security:
+    user:
+      name: admin
+      password: admin2020
   cloud:
     config:
       server:
@@ -40,6 +45,7 @@ spring:
           # password:
           # 启动项目是就clone git仓库
           clone-on-start: true
+# 方便查看执行流程
 logging:
   level:
     org.springframework.cloud: debug
