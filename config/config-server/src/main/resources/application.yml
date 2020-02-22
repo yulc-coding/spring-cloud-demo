@@ -34,7 +34,13 @@ spring:
         # 从git仓库获取配置文件，如果是私有仓库需要填写用户密码
         git:
           uri: https://github.com/yulc-coding/spring-cloud-demo
-          # git仓库地址下的相对地址 多个用逗号","分割
+          # git仓库地址下的相对地址，可以使用通配符*如/test*，多个用逗号","分割，会从根目录以及配置的目录下去查找
           search-paths: /repo
           # username:
           # password:
+          # 启动项目是就clone git仓库
+          clone-on-start: true
+logging:
+  level:
+    org.springframework.cloud: debug
+    org.springframework.boot: debug

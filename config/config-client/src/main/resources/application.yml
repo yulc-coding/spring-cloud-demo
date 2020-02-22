@@ -10,7 +10,16 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh, bus-env
+
 spring:
+  cloud:
+    bus:
+      id: ${spring.application.name}:${server.port}
   rabbitmq:
     host: localhost
     port: 5672
