@@ -17,10 +17,6 @@ management:
         include: bus-refresh, bus-env
 
 spring:
-  security:
-    user:
-      name: cloud
-      password: PWD123
   cloud:
     bus:
       id: ${spring.application.name}:${server.port}
