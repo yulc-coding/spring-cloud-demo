@@ -6,15 +6,15 @@ spring:
     name: trace-api
   sleuth:
     sampler:
-      # \u5C06\u91C7\u6837\u6BD4\u4F8B\u8BBE\u7F6E\u4E3A 1.0\uFF0C\u4E5F\u5C31\u662F\u5168\u90E8\u90FD\u9700\u8981\u3002\u9ED8\u8BA4\u662F 0.1
+      # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
       probability: 1.0
-  # \u6307\u5B9A\u4E86 Zipkin \u670D\u52A1\u5668\u7684\u5730\u5740
+  # 指定了 Zipkin 服务器的地址
   zipkin:
     base-url: http://localhost:9411/
 
 eureka:
   instance:
-    # \u4EE5IP\u5730\u5740\u6CE8\u518C\u5230\u670D\u52A1\u4E2D\u5FC3\uFF0C\u76F8\u4E92\u6CE8\u518C\u4F7F\u7528IP\u5730\u5740
+    # 以IP地址注册到服务中心，相互注册使用IP地址
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipaddress}:${server.port}
   client:
