@@ -11,9 +11,10 @@
 
     <modules>
         <module>discover</module>
-        <module>zuul</module>
-        <module>auth</module>
         <module>demos</module>
+        <module>zuul</module>
+        <module>gateway</module>
+        <module>auth</module>
         <module>config</module>
         <module>sleuth</module>
     </modules>
