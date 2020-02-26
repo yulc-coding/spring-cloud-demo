@@ -3,6 +3,30 @@ server:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 开启从注册中心动态创建路由的功能
+          enabled: true
+          # 在断言或者过滤器服务名使用小写，默认是大写
+          lower-case-service-id: true
+      routes:
+        # 路由的ID
+        - id: path_route
+          # 匹配后路由地址，此处需要使用lb协议
+          uri: lb://demp-api
+          # 断言配置
+          predicates:
+            # 路径相匹配的进行路由
+            - Path=/user/{id}
+          # 过滤器配置
+          filters:
+            # 服务降级
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
 eureka:
   instance:
     # 以IP地址注册到服务中心，相互注册使用IP地址
