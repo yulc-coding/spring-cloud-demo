@@ -20,7 +20,7 @@ zuul:
       # 对应请求的服务
       serviceId: AUTH
     demo-api:
-      path: /demp-api/**
+      path: /demo-api/**
       serviceId: DEMO-API
     ribbon:
       path: /ribbon/**

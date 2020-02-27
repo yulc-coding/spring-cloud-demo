@@ -18,6 +18,11 @@ public class AipController {
     @Value("${server.port}")
     private String port;
 
+    @GetMapping("/request/{msg}")
+    public String request(@PathVariable String msg) {
+        System.out.println("get message：" + msg);
+        return "from port: " + port;
+    }
 
     @GetMapping("/ribbon/{msg}")
     public String forRibbon(@PathVariable String msg) {
