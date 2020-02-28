@@ -16,4 +16,7 @@
     <packaging>pom</packaging>
     <name>nacos</name>
 
+    <modules>
+        <module>nacos-discovery</module>
+    </modules>
 </project>
