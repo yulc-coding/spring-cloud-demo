@@ -4,21 +4,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.ylc.frame</groupId>
-        <artifactId>spring-cloud-demo</artifactId>
-        <version>1.0</version>
+        <groupId>org.ylc.frame.cloud</groupId>
+        <artifactId>eureka</artifactId>
+        <version>0.0.1</version>
     </parent>
 
-    <groupId>org.ylc.frame.cloud</groupId>
-    <artifactId>discover</artifactId>
+    <artifactId>eureka-client</artifactId>
     <version>0.0.1</version>
-    <name>discover</name>
-    <description>服务注册</description>
+    <name>eureka-client</name>
+    <description>eureka 客户端</description>
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <dependency>

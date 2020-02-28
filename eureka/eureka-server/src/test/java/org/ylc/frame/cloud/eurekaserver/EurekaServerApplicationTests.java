@@ -1,10 +1,10 @@
-package org.ylc.frame.cloud.discover;
+package org.ylc.frame.cloud.eurekaserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiscoverApplicationTests {
+class EurekaServerApplicationTests {
 
     @Test
     void contextLoads() {
