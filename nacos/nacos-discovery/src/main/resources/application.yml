@@ -1,0 +1,11 @@
+server:
+  port: 8849
+spring:
+  application:
+    name: nacos-discovery
+  cloud:
+    nacos:
+      discovery:
+        # Nacos\u914D\u7F6E\u7684\u5730\u5740
+        server-addr: localhost:8848
+
