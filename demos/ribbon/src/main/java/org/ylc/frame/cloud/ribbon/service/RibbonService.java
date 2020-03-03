@@ -26,6 +26,9 @@ public class RibbonService {
         this.loadBalancerClient = loadBalancerClient;
     }
 
+    /**
+     * 整合Eureka后可以直接通过微服务名称进行访问
+     */
     @HystrixCommand(fallbackMethod = "returnError")
     public String restTemplateTest(String msg) {
         return restTemplate.getForObject("http://demo-api/api/ribbon/" + msg, String.class);
@@ -36,7 +39,7 @@ public class RibbonService {
      * 调用choose()方法时，会更具负载策略选择一个实例
      * <p>
      * 也可以通过`ribbon.eureka.enabled=false`不从 Eureka Client 获取注册列表
-     * 这时需要自己维护一份祖册列表信息
+     * 这时需要自己维护一份注册列表信息
      */
     public String loadBalancerTest() {
         ServiceInstance instance = loadBalancerClient.choose("demo-api");

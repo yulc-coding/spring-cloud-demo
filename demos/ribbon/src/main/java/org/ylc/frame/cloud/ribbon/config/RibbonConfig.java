@@ -16,6 +16,10 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RibbonConfig {
 
+    /**
+     * 通过RestTemplate来进行通信
+     * 注解:@LoadBalanced 开启负载均衡
+     */
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate() {
