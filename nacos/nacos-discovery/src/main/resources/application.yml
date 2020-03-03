@@ -8,8 +8,3 @@ spring:
       discovery:
         # Nacos 服务中心地址
         server-addr: localhost:8848
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"

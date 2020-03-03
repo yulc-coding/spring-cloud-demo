@@ -18,5 +18,7 @@
 
     <modules>
         <module>nacos-discovery</module>
+        <module>nacos-consumer</module>
+        <module>nacos-config</module>
     </modules>
 </project>
