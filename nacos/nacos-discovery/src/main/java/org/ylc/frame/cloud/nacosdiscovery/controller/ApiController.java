@@ -26,16 +26,16 @@ public class ApiController {
         return "from port: " + port;
     }
 
-    @GetMapping("/ribbon/{msg}")
-    public String forRibbon(@PathVariable String msg) {
+    @GetMapping("/restTemplate/{msg}")
+    public String forRestTemplate(@PathVariable String msg) {
         System.out.printf("get message %s with ribbon\n", msg);
-        return "from port: " + port;
+        return "[restTemplate] from port: " + port;
     }
 
     @GetMapping("/feign")
     public String forFeign(@RequestParam(name = "msg") String msg) {
         System.out.printf("get message %s with feign\n", msg);
-        return "from port: " + port;
+        return "[feign] from port: " + port;
     }
 
 }

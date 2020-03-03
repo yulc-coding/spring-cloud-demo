@@ -1,11 +1,15 @@
 server:
-  port: 8849
+  port: 8850
 spring:
   application:
     name: nacos-discovery
   cloud:
     nacos:
       discovery:
-        # Nacos\u914D\u7F6E\u7684\u5730\u5740
+        # Nacos 服务中心地址
         server-addr: localhost:8848
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
