@@ -1,23 +1,26 @@
-server:
-  port: 8761
 spring:
-  application:
-    name: eureka-server
-eureka:
-  instance:
-    # eureka服务实例名称
-    hostname: localhost
-    # 发送心跳间隔，默认30，官方不建议修改
-    lease-renewal-interval-in-seconds: 30
-    # 服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除，默认90
-    lease-expiration-duration-in-seconds: 90
-  client:
-    # 不向注册服务中心注册自己（自己就是服务中心）
-    register-with-eureka: false
-    # 不需要去检索注册表信息
-    fetch-registry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    # 关闭自我保护模式，生产环境建议开启
-    enable-self-preservation: false
+  profiles:
+    active: server2
+#server:
+#  port: 8761
+#spring:
+#  application:
+#    name: eureka-server
+#eureka:
+#  instance:
+#    # eureka服务实例名称
+#    hostname: localhost
+#    # 发送心跳间隔，默认30，官方不建议修改
+#    lease-renewal-interval-in-seconds: 30
+#    # 服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除，默认90
+#    lease-expiration-duration-in-seconds: 90
+#  client:
+#    # 不向注册服务中心注册自己（自己就是服务中心）
+#    register-with-eureka: false
+#    # 不需要去检索注册表信息
+#    fetch-registry: false
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  server:
+#    # 关闭自我保护模式，生产环境建议开启
+#    enable-self-preservation: false
