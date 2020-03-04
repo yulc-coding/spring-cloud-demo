@@ -1,4 +1,4 @@
-# Data ID \u9ED8\u8BA4\u4F7F\u7528`spring.application.name`\u548C\u914D\u7F6E\u6587\u4EF6\u6269\u5C55\u540D`file-extension`\u7ED3\u5408
+# Data ID 默认使用 `spring.application.name` 和配置文件扩展名 `file-extension` 结合
 spring:
   application:
     name: nacos-config
@@ -6,11 +6,11 @@ spring:
     active: pro
   cloud:
     nacos:
-      # \u914D\u7F6E\u4E2D\u5FC3
+      # 配置中心
       config:
-        # \u670D\u52A1\u914D\u7F6E\u5730\u5740\u3002\u5982\u679C\u4F7F\u7528\u57DF\u540D\u6765\u8BBF\u95EE\u7684\u683C\u5F0F\u4E3A \u57DF\u540D:\u7AEF\u53E3\uFF08\u7AEF\u53E3\u4E0D\u80FD\u7701\u7565\uFF09
+        # 服务配置地址。如果使用域名访问，格式为 域名:端口 （端口不能省略）
         server-addr: localhost:8848
-        # \u663E\u793A\u7684\u58F0\u660E DataId \u6587\u4EF6\u6269\u5C55\u540D
+        # 显示的声明 DataId 文件扩展名
         file-extension: yml
-        # \u914D\u7F6E\u7EC4
+        # 配置组
         group: DEFAULT_GROUP

@@ -6,5 +6,5 @@ spring:
   cloud:
     nacos:
       discovery:
-        # Nacos \u670D\u52A1\u4E2D\u5FC3\u5730\u5740
+        # Nacos 服务中心地址
         server-addr: localhost:8848
