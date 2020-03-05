@@ -9,9 +9,9 @@
 
 ### [1、Eureka 服务注册](https://github.com/yulc-coding/spring-cloud-demo/tree/Hoxton-v1/eureka)
 
-### [2、Ribbon 负载均衡](https://github.com/yulc-coding/spring-cloud-demo/tree/Hoxton-v1/demos/ribbon)
+### [2、Ribbon 负载均衡](https://github.com/yulc-coding/spring-cloud-demo/tree/Hoxton-v1/ribbon)
 
-### [3、Feign 服务调用](https://github.com/yulc-coding/spring-cloud-demo/tree/Hoxton-v1/demos/feign)
+### [3、Feign 服务调用](https://github.com/yulc-coding/spring-cloud-demo/tree/Hoxton-v1/feign)
 
 ### 4、Hystrix & Turbine
 
