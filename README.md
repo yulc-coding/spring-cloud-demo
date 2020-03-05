@@ -1,12 +1,10 @@
 ![](https://github.com/yulc-coding/spring-cloud-demo/blob/Hoxton-v1/QR_code.png)
 
 ****
-
 # Spring Cloud 组件样例
 * Spring Cloud 基于 Hoxton.RELEASE
 * Spring Boot 基于 2.2.5.RELEASE
 * spring-cloud-alibaba 基于 2.2.0.RELEASE
-
 ****
 
 ### [1、Eureka 服务注册](https://github.com/yulc-coding/spring-cloud-demo/tree/Hoxton-v1/eureka)
