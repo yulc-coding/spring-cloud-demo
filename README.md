@@ -1,4 +1,4 @@
-![](https://github.com/yulc-coding/spring-cloud-demo/blob/Hoxton-v1/QR_code.png)
+![](https://github.com/yulc-coding/spring-cloud-demo/blob/master/QR_code.png)
 
 ****
 # Spring Cloud 组件样例
