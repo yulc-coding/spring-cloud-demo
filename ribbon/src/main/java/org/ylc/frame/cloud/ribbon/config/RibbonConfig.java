@@ -31,7 +31,7 @@ public class RibbonConfig {
     }
 
     /**
-     * 指定负载策略，默认为轮询：RoundRobinRule
+     * 指定负载策略，默认为轮询
      * RoundRobinRule 轮询，默认
      * RandomRule     随机
      * AvailabilityFilteringRule 按性能来选取。
@@ -44,7 +44,7 @@ public class RibbonConfig {
     public IRule myRule() {
         // 随机方式
         // return new RandomRule();
-        // 先按照轮询方式获取服务，则在指定的时间内某个实例连续访问失败，则下次轮序时会跳过该实例。
+        // 在轮询方式上加入重试机制
         return new RetryRule();
     }
 
