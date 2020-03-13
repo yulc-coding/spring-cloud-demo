@@ -44,7 +44,6 @@ public class RibbonConfig {
     public IRule myRule() {
         // 随机方式
         // return new RandomRule();
-
         // 先按照轮询方式获取服务，则在指定的时间内某个实例连续访问失败，则下次轮序时会跳过该实例。
         return new RetryRule();
     }

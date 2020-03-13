@@ -31,7 +31,7 @@ public class RibbonController {
 
     /**
      * LoadBalancerClient 从 Eureka Client 获取服务注册列表信息的,并进行缓存
-     * 调用choose()方法时，会更具负载策略选择一个实例
+     * 调用choose()方法时，会根据负载策略选择一个实例
      */
     @GetMapping("/loadBalancer")
     public String loadBalancerTest() {
