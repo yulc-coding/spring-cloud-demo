@@ -20,6 +20,7 @@
         <module>config</module>
         <module>sleuth</module>
         <module>nacos</module>
+        <module>oauth2</module>
     </modules>
 
     <properties>
