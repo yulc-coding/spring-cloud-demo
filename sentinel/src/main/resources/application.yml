@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        # \u542F\u52A8\u4E00\u4E2A Server \u4E0E Sentinel \u63A7\u5236\u53F0\u4EA4\u4E92\u3002
+        port: 8791
+        # \u63A7\u5236\u53F0\u7AEF\u53E3
+        dashboard: 8080

@@ -21,6 +21,7 @@
         <module>sleuth</module>
         <module>nacos</module>
         <module>oauth2</module>
+        <module>sentinel</module>
     </modules>
 
     <properties>
