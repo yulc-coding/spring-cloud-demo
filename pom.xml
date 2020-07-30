@@ -16,7 +16,6 @@
         <module>feign</module>
         <module>zuul</module>
         <module>gateway</module>
-        <module>auth</module>
         <module>config</module>
         <module>sleuth</module>
         <module>nacos</module>
