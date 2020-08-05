@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka</module>
         <module>api</module>
         <module>ribbon</module>
         <module>feign</module>

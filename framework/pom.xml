@@ -13,5 +13,8 @@
 
     <groupId>org.ylc.frame.cloud</groupId>
     <artifactId>framework</artifactId>
+    <version>1.0</version>
+
+    <packaging>pom</packaging>
 
 </project>

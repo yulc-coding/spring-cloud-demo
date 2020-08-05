@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>spring-cloud-demo</artifactId>
-        <groupId>org.ylc.frame</groupId>
+        <groupId>org.ylc.frame.cloud</groupId>
+        <artifactId>component</artifactId>
         <version>1.0</version>
     </parent>
 
-    <groupId>org.ylc.frame.cloud</groupId>
-    <artifactId>eureka</artifactId>
+    <artifactId>component-eureka</artifactId>
     <version>0.0.1</version>
+    <name>component-eureka</name>
+
     <packaging>pom</packaging>
-    <name>eureka</name>
 
     <modules>
         <module>eureka-server</module>
