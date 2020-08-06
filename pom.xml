@@ -11,7 +11,6 @@
 
     <modules>
         <module>api</module>
-        <module>gateway</module>
         <module>sleuth</module>
         <module>nacos</module>
         <module>oauth2</module>

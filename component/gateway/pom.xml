@@ -4,16 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.ylc.frame</groupId>
-        <artifactId>spring-cloud-demo</artifactId>
+        <groupId>org.ylc.frame.cloud</groupId>
+        <artifactId>component</artifactId>
         <version>1.0</version>
     </parent>
 
-    <groupId>org.ylc.frame.cloud</groupId>
-    <artifactId>gateway</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>gateway</name>
-    <description>服务网关</description>
+    <artifactId>component-gateway</artifactId>
+    <version>0.0.1</version>
+    <name>component-gateway</name>
+    <description>服务网关，用于替代 zuul</description>
 
     <dependencies>
         <!-- 服务注册 -->
