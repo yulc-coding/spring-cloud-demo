@@ -19,6 +19,7 @@
 
     <modules>
         <module>eureka</module>
+        <module>feign</module>
     </modules>
 
 </project>
