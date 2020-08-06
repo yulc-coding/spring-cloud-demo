@@ -11,7 +11,6 @@
 
     <modules>
         <module>api</module>
-        <module>ribbon</module>
         <module>zuul</module>
         <module>gateway</module>
         <module>config</module>
