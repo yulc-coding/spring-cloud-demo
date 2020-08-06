@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>spring-cloud-demo</artifactId>
-        <groupId>org.ylc.frame</groupId>
+        <groupId>org.ylc.frame.cloud</groupId>
+        <artifactId>component</artifactId>
         <version>1.0</version>
     </parent>
 
-    <groupId>org.ylc.frame.cloud</groupId>
-    <artifactId>config</artifactId>
+    <artifactId>component-config</artifactId>
     <version>0.0.1</version>
+    <name>component-config</name>
+
     <packaging>pom</packaging>
-    <name>config</name>
 
     <modules>
         <module>config-server</module>
