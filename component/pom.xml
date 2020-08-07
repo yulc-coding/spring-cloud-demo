@@ -26,6 +26,7 @@
         <module>config</module>
         <module>sleuth</module>
         <module>nacos</module>
+        <module>sentinel</module>
     </modules>
 
 </project>

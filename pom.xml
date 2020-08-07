@@ -12,7 +12,6 @@
     <modules>
         <module>api</module>
         <module>oauth2</module>
-        <module>sentinel</module>
         <module>component</module>
         <module>framework</module>
     </modules>
