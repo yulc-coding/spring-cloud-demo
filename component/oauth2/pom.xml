@@ -5,14 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>spring-cloud-demo</artifactId>
-        <groupId>org.ylc.frame</groupId>
+        <groupId>org.ylc.frame.cloud</groupId>
+        <artifactId>component</artifactId>
         <version>1.0</version>
     </parent>
 
-    <groupId>org.ylc.frame.cloud</groupId>
-    <artifactId>oauth2</artifactId>
+    <artifactId>component-oauth2</artifactId>
     <version>0.0.1</version>
+    <name>component-oauth2</name>
+
     <packaging>pom</packaging>
 
     <modules>
