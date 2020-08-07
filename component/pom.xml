@@ -25,6 +25,7 @@
         <module>gateway</module>
         <module>config</module>
         <module>sleuth</module>
+        <module>nacos</module>
     </modules>
 
 </project>

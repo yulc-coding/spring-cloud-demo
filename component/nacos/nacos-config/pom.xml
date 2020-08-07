@@ -5,29 +5,27 @@
 
     <parent>
         <groupId>org.ylc.frame.cloud</groupId>
-        <artifactId>nacos</artifactId>
+        <artifactId>component-nacos</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>nacos-consumer</artifactId>
+    <artifactId>nacos-config</artifactId>
     <version>0.0.1</version>
-    <name>nacos-consumer</name>
-    <description>nacos服务消费者</description>
+    <name>nacos-config</name>
+    <description>nacos-config 进行配置管理</description>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <dependency>

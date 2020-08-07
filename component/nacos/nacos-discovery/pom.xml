@@ -5,24 +5,20 @@
 
     <parent>
         <groupId>org.ylc.frame.cloud</groupId>
-        <artifactId>nacos</artifactId>
+        <artifactId>component-nacos</artifactId>
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>nacos-config</artifactId>
-    <version>0.0.1</version>
-    <name>nacos-config</name>
-    <description>nacos-config 进行配置管理</description>
+    <artifactId>nacos-discovery</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <description>使用Nacos进行服务注册</description>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
