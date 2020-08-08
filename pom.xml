@@ -19,7 +19,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <!-- 支持Spring Boot 2.2.X -->
+        <!--
+            支持Spring Boot 2.2.X
+            具体版本参考：
+            https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
+         -->
         <spring-cloud-version>Hoxton.RELEASE</spring-cloud-version>
         <spring-boot-version>2.2.5.RELEASE</spring-boot-version>
         <spring-cloud-alibaba-version>2.2.0.RELEASE</spring-cloud-alibaba-version>

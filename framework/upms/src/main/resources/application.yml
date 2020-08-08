@@ -1,0 +1,29 @@
+#
+#    spring.application.name=upms
+#    management.endpoints.jmx.exposure.include=*
+#    management.endpoints.web.exposure.include=*
+#    management.endpoint.health.show-details=always
+#    # spring cloud access&secret config
+#    # \u53EF\u4EE5\u8BBF\u95EE\u5982\u4E0B\u5730\u5740\u67E5\u770B: https://usercenter.console.aliyun.com/#/manage/ak
+#    alibaba.cloud.access-key=****
+#    alibaba.cloud.secret-key=****
+#    # \u5E94\u7528\u670D\u52A1 WEB \u8BBF\u95EE\u7AEF\u53E3
+#    server.port=8080
+#    # Actuator Web \u8BBF\u95EE\u7AEF\u53E3
+#    management.server.port=8081
+#    management.health.sentinel.enabled=false
+#    spring.cloud.sentinel.transport.dashboard=localhost:8080
+#    spring.cloud.sentinel.eager=true
+#    #spring.cloud.sentinel.http-method-specify=false
+#    spring.cloud.sentinel.datasource.ds1.file.file=classpath: sentinel/flowrule.json
+#    spring.cloud.sentinel.datasource.ds1.file.data-type=json
+#    spring.cloud.sentinel.datasource.ds1.file.rule-type=flow
+#    spring.cloud.sentinel.datasource.ds2.file.file=classpath: sentinel/degraderule.json
+#    spring.cloud.sentinel.datasource.ds2.file.data-type=json
+#    spring.cloud.sentinel.datasource.ds2.file.rule-type=degrade
+#    spring.cloud.sentinel.datasource.ds3.file.file=classpath: sentinel/authority.json
+#    spring.cloud.sentinel.datasource.ds3.file.rule-type=authority
+#    spring.cloud.sentinel.datasource.ds4.file.file=classpath: sentinel/system.json
+#    spring.cloud.sentinel.datasource.ds4.file.rule-type=system
+#    spring.cloud.sentinel.datasource.ds5.file.file=classpath: sentinel/param-flow.json
+#    spring.cloud.sentinel.datasource.ds5.file.rule-type=param_flow

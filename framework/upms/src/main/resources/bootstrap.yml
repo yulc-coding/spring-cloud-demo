@@ -1,0 +1,16 @@
+# Data ID 默认使用 `spring.application.name` 和配置文件扩展名 `file-extension` 结合
+spring:
+  application:
+    name: upms
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      # 配置中心
+      config:
+        # 服务配置地址。如果使用域名访问，格式为 域名:端口 （端口不能省略）
+        server-addr: localhost:8848
+        # 显示的声明 DataId 文件扩展名
+        file-extension: yml
+        # 配置组
+        group: DEFAULT_GROUP
