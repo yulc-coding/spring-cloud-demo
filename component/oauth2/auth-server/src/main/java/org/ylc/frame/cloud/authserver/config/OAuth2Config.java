@@ -3,6 +3,7 @@ package org.ylc.frame.cloud.authserver.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -10,7 +11,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.ylc.frame.cloud.authserver.service.WebSecurityUserDetailsService;
 
 /**
  * 代码千万行，注释第一行，
@@ -25,7 +25,7 @@ import org.ylc.frame.cloud.authserver.service.WebSecurityUserDetailsService;
 public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
-    private WebSecurityUserDetailsService webSecurityUserDetailsService;
+    private UserDetailsService securityUserDetailsService;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -37,21 +37,23 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         // 调用此方法才能支持 password 模式
         endpoints.authenticationManager(authenticationManager)
                 // 设置用户验证服务
-                .userDetailsService(webSecurityUserDetailsService)
+                .userDetailsService(securityUserDetailsService)
                 // 指定 token 的存储方式
                 .tokenStore(tokenStore);
     }
 
     @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        //
+    public void configure(AuthorizationServerSecurityConfigurer security) {
+        // 允许客户端访问OAuth2授权接口，否则请求Token时会返回401
         security.allowFormAuthenticationForClients();
-        security.checkTokenAccess("");
-        security.tokenKeyAccess("");
+        // 校验Token的接口
+        security.checkTokenAccess("isAuthenticated()");
+        // 获取token的接口
+        security.tokenKeyAccess("generatorToken()");
     }
 
     @Override

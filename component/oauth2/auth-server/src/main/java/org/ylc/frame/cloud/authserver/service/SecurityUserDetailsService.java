@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
  * @version 1.0.0
  * @date 2020/6/15
  */
-@Service
-public class WebSecurityUserDetailsService implements UserDetailsService {
+@Service(value = "securityUserDetailsService")
+public class SecurityUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
