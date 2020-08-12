@@ -1,0 +1,46 @@
+server:
+  port: 8762
+  servlet:
+    context-path: /gateway
+spring:
+  application:
+    name: cmpt-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 开启从注册中心动态创建路由的功能
+          enabled: true
+          # 在断言或者过滤器服务名使用小写，默认是大写
+          lower-case-service-id: true
+      routes:
+        # 路由的ID，保持唯一
+        - id: demo-api-route
+          # 匹配后路由地址，此处需要使用lb协议，这样才能启用Gateway的负载均衡功能
+          uri: lb://demo-api
+          # 断言配置
+          predicates:
+            # 路径相匹配的进行路由
+            - Path=/demo-api/**
+          # 过滤器配置
+          filters:
+            # 去除指定数量的路径的前缀，这里设为1，即去掉请求路径中的/demo-api/
+            - StripPrefix=1
+            # 服务降级
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
+
+eureka:
+  instance:
+    # 以IP地址注册到服务中心，相互注册使用IP地址
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
