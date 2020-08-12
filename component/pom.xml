@@ -22,7 +22,6 @@
         <module>ribbon</module>
         <module>feign</module>
         <module>zuul</module>
-        <module>gateway</module>
         <module>config</module>
         <module>sleuth</module>
         <module>nacos</module>
