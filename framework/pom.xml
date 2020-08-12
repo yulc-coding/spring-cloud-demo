@@ -18,6 +18,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>gateway</module>
         <module>upms</module>
     </modules>
 
