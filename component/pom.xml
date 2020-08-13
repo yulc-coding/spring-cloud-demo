@@ -21,7 +21,6 @@
         <module>eureka</module>
         <module>ribbon</module>
         <module>feign</module>
-        <module>zuul</module>
         <module>cmpt-gateway</module>
         <module>config</module>
         <module>sleuth</module>
