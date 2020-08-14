@@ -1,15 +1,15 @@
-package org.ylc.frame.cloud.ribbon;
+package org.ylc.frame.cloud.cmptribbon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication
 @EnableEurekaClient
-public class RibbonApplication {
+@SpringBootApplication
+public class CmptRibbonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RibbonApplication.class, args);
+        SpringApplication.run(CmptRibbonApplication.class, args);
     }
 
 }

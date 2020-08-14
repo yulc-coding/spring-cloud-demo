@@ -9,9 +9,9 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>component-ribbon</artifactId>
+    <artifactId>cmpt-ribbon</artifactId>
     <version>0.0.1</version>
-    <name>component-ribbon</name>
+    <name>cmpt-ribbon</name>
     <description>RestTemplate + Ribbon 消费服务</description>
 
     <dependencies>

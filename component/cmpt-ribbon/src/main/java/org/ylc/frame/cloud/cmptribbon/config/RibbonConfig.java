@@ -1,4 +1,4 @@
-package org.ylc.frame.cloud.ribbon.config;
+package org.ylc.frame.cloud.cmptribbon.config;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RetryRule;

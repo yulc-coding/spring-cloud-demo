@@ -1,4 +1,4 @@
-package org.ylc.frame.cloud.ribbon.controller;
+package org.ylc.frame.cloud.cmptribbon.controller;
 
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
