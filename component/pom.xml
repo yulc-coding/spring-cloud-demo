@@ -20,6 +20,7 @@
     <modules>
         <module>eureka</module>
         <module>cmpt-ribbon</module>
+        <module>cmpt-feign</module>
         <module>cmpt-zuul</module>
         <module>cmpt-gateway</module>
         <module>config</module>
