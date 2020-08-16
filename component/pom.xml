@@ -23,12 +23,11 @@
         <module>cmpt-feign</module>
         <module>cmpt-zuul</module>
         <module>cmpt-gateway</module>
-        <module>config</module>
+        <module>cmpt-config</module>
         <module>sleuth</module>
         <module>nacos</module>
         <module>sentinel</module>
         <module>oauth2</module>
-        <module>cmpt-config</module>
     </modules>
 
 </project>
