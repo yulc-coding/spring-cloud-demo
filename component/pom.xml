@@ -28,6 +28,7 @@
         <module>nacos</module>
         <module>sentinel</module>
         <module>oauth2</module>
+        <module>cmpt-config</module>
     </modules>
 
 </project>
