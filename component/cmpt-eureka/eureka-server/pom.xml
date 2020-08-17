@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>org.ylc.frame.cloud</groupId>
-        <artifactId>component-eureka</artifactId>
+        <artifactId>cmpt-eureka</artifactId>
         <version>0.0.1</version>
     </parent>
 

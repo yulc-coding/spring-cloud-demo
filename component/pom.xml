@@ -18,7 +18,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka</module>
+        <module>cmpt-eureka</module>
         <module>cmpt-ribbon</module>
         <module>cmpt-feign</module>
         <module>cmpt-zuul</module>
