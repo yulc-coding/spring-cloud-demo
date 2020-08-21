@@ -24,7 +24,7 @@
         <module>cmpt-zuul</module>
         <module>cmpt-gateway</module>
         <module>cmpt-config</module>
-        <module>sleuth</module>
+        <module>cmpt-sleuth</module>
         <module>nacos</module>
         <module>cmpt-sentinel</module>
         <module>oauth2</module>
