@@ -5,14 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.ylc.frame.cloud</groupId>
         <artifactId>component</artifactId>
+        <groupId>org.ylc.frame.cloud</groupId>
         <version>1.0</version>
     </parent>
 
-    <artifactId>component-nacos</artifactId>
+    <artifactId>cmpt-nacos</artifactId>
     <version>0.0.1</version>
-    <name>component-nacos</name>
 
     <packaging>pom</packaging>
 
@@ -21,4 +20,5 @@
         <module>nacos-consumer</module>
         <module>nacos-config</module>
     </modules>
+
 </project>
