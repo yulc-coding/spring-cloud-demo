@@ -27,7 +27,7 @@
         <module>cmpt-sleuth</module>
         <module>cmpt-nacos</module>
         <module>cmpt-sentinel</module>
-        <module>oauth2</module>
+        <module>cmpt-oauth2</module>
     </modules>
 
 </project>
