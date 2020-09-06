@@ -9,13 +9,19 @@
 
 ## 微服务核心：
 * 注册中心：每个服务将自己的服务信息注册到注册中心上，并且通过注册中心去发现其他服务的信息，如IP地址
-    * Netflix Eureka
-    * Nacos
-    * Consue
     * ZooKeeper
-* RPC框架：远程调用其他的服务
-    * Doubble
-    * Feign + Netflix Ribbon
+        > `Leader` + `Follower`。服务在`Leader`节点注册，然后`Leader`节点将数据同步到所有`Follower`节点。典型的`CP`模型，一旦`leader`崩溃，zk会有一段时间不可用，需要重新选举一个`leader`，然后再做数据同步。
+    * Netflix Eureka
+        > 每个节点平等，每当有服务在一个`Eureka`节点注册，该`Eureka`节点会将新的注册服务异步同步到其他`Eureka`节点（**会有几十秒的延迟**）。AP模型
+    * Consul
+        > 基于`raft`算法的CP模型，类似于`ZooKeeper`
+    * Alibaba Nacos (大趋势，推荐使用)
+        > 也是基于`raft`算法的CP模型，同时也支持配置成类似`Eureka`的`AP`模式
+
+* RPC框架：远程调用其他的服务。
+    * Dubbo => (基于TCP协议)
+    * Feign + Netflix Ribbon => (基于Http协议)
+    * gRPC
 * 多环境隔离
 * 自动化部署
     * jenkins
