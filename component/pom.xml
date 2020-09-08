@@ -29,6 +29,7 @@
         <module>cmpt-sentinel</module>
         <module>cmpt-oauth2</module>
         <module>cmpt-dubbo</module>
+        <module>cmpt-grpc</module>
     </modules>
 
 </project>
