@@ -23,6 +23,16 @@
 * [下载jar包](https://github.com/alibaba/Sentinel/releases)
 * [下载源码](https://github.com/alibaba/Sentinel/tree/master/sentinel-dashboard)
 
+#### 启动控制台
+```
+sudo /usr/bin/java -Dserver.port=9601 -Dcsp.sentinel.dashboard.server=localhost:9601 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.0.jar
+
+# 指定控制台地址和端口
+-Dcsp.sentinel.dashboard.server=consoleIp:port
+```
+
+> 默认用户和密码都是`sentinel`
+
 
 
 ### Feign支持

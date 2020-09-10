@@ -29,4 +29,20 @@ public class TestController {
     public String sentinelTest() {
         return testService.sentinelTest();
     }
+
+    /**
+     * 限流
+     */
+    @GetMapping("/block")
+    public String blockHandlerTest() {
+        return testService.blockHandlerTest();
+    }
+
+    /**
+     * 降级
+     */
+    @GetMapping("/fallback")
+    public String fallbackTest() {
+        return testService.fallbackTest();
+    }
 }

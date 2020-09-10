@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: sentinel-demo
   cloud:
     sentinel:
       transport:
         # 启动一个 Http Server 与 Sentinel 控制台交互。
         port: 8791
         # 控制台端口
-        dashboard: 8080
+        dashboard: localhost:9601
