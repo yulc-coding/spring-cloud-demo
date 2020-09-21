@@ -20,6 +20,7 @@
     <modules>
         <module>gateway</module>
         <module>upms</module>
+        <module>oauth2</module>
     </modules>
 
 </project>
