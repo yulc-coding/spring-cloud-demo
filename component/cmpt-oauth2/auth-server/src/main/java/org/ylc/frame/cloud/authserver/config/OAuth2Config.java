@@ -61,16 +61,23 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         // 这里放在内存中
         clients.inMemory()
                 // 对应请求端定义的 client-id 和 client-secret
-                .withClient("order-client")
-                .secret(passwordEncoder.encode("order-secret-8888"))
+                .withClient("client-oa")
+                .secret(passwordEncoder.encode("oa-secret-8888"))
+                /*
+                 * authorization_code： 授权码类型
+                 * implicit： 隐式授权类型
+                 * password： 密码类型
+                 * client_credentials： 客户端凭据类型
+                 * refresh_token： 刷新令牌来获取新的令牌
+                 */
                 .authorizedGrantTypes("refresh_token", "authorization_code", "password")
-                // token 的有效期
+                // token 的有效期（秒）
                 .accessTokenValiditySeconds(3600)
-                // 限制客户端访问权限
+                // 限制客户端访问权限，在换取的 token 的时候会带上 scope 参数，只有在 scopes 定义内的，才可以正常换取 token
                 .scopes("all")
                 .and()
-                .withClient("user-client")
-                .secret(passwordEncoder.encode("user-secret-8888"))
+                .withClient("client-erp")
+                .secret(passwordEncoder.encode("erp-secret-8888"))
                 .authorizedGrantTypes("refresh_token", "authorization_code", "password")
                 .accessTokenValiditySeconds(3600)
                 .scopes("all");
