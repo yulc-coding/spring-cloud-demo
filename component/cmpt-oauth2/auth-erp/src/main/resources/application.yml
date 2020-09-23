@@ -1,0 +1,38 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /oa
+
+spring:
+  application:
+    name: client-oa
+  # redis
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    # password: 123456
+    timeout: 3000ms
+    lettuce:
+      pool:
+        max-active: 2
+        max-wait: 3000ms
+        max-idle: 2
+        min-idle: 0
+
+security:
+  oauth2:
+    client:
+      client-id: client-od
+      client-secret: oa-secret-9601
+      # 用户授权地址
+      user-authorization-uri: localhost:9000/oauth/authorize
+      # 获取token地址
+      access-token-uri: localhost:9000/oauth/token
+    resource:
+      id: client-oa
+      user-info-uri: oa-info
+    authorization:
+      # token校验
+      check-token-access: localhost:9000/oauth/check_token

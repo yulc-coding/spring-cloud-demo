@@ -1,13 +1,13 @@
-package org.ylc.frame.cloud.authclient;
+package org.ylc.frame.cloud.autherp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthClientApplicationTests {
+class AuthErpApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
