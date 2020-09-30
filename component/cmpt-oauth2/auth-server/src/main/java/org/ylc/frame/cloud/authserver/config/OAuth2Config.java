@@ -1,6 +1,8 @@
 package org.ylc.frame.cloud.authserver.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,6 +22,8 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
  * @version 1.0.0
  * @date 2020/6/15
  */
+@ConditionalOnProperty(prefix = "oauth-store", name = "client", havingValue = "memory")
+@Slf4j
 @Configuration
 @EnableAuthorizationServer
 public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
@@ -58,6 +62,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        log.info("客户端信息存放在内存中");
         // 这里放在内存中
         clients.inMemory()
                 // 对应请求端定义的 client-id 和 client-secret
