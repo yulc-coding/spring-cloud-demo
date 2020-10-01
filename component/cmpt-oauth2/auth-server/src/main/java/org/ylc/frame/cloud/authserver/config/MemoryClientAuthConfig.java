@@ -4,61 +4,28 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
- * 代码千万行，注释第一行，
- * 注释不规范，同事泪两行。
+ * 代码全万行，注释第一行
+ * 注释不规范，同事泪两行
+ * <p>
+ * 客户端信息存放在内存中
  *
  * @author YuLc
  * @version 1.0.0
- * @date 2020/6/15
+ * @date 2020-09-30
  */
 @ConditionalOnProperty(prefix = "oauth-store", name = "client", havingValue = "memory")
 @Slf4j
 @Configuration
 @EnableAuthorizationServer
-public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
-
-    @Autowired
-    private UserDetailsService securityUserDetailsService;
-
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private TokenStore tokenStore;
+public class MemoryClientAuthConfig extends AbstractAuthConfig {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-    @Override
-    public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        // 调用此方法才能支持 password 模式
-        endpoints.authenticationManager(authenticationManager)
-                // 设置用户验证服务
-                .userDetailsService(securityUserDetailsService)
-                // 指定 token 的存储方式
-                .tokenStore(tokenStore);
-    }
-
-    @Override
-    public void configure(AuthorizationServerSecurityConfigurer security) {
-        // 允许客户端访问OAuth2授权接口，否则请求Token时会返回401
-        security.allowFormAuthenticationForClients();
-        // 校验Token的接口
-        security.checkTokenAccess("isAuthenticated()");
-        // 获取token的接口
-        security.tokenKeyAccess("generatorToken()");
-    }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -87,5 +54,4 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
                 .accessTokenValiditySeconds(3600)
                 .scopes("all");
     }
-
 }
