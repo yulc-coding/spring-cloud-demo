@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 @Slf4j
 @Configuration
 @EnableAuthorizationServer
-public class DbClientAuthConfig extends AbstractAuthConfig {
+public class ClientJdbcAuthConfig extends AbstractAuthConfig {
 
     @Autowired
     private DataSource dataSource;
