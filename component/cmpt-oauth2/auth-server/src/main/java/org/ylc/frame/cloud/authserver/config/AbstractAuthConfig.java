@@ -43,9 +43,9 @@ public abstract class AbstractAuthConfig extends AuthorizationServerConfigurerAd
     public void configure(AuthorizationServerSecurityConfigurer security) {
         // 允许客户端访问OAuth2授权接口，否则请求Token时会返回401
         security.allowFormAuthenticationForClients();
-        // 校验Token的接口
+        // 校验Token的接口 /oauth/check_token
         security.checkTokenAccess("isAuthenticated()");
-        // 获取token的接口
+        // 获取token的接口 /oauth/token_key
         security.tokenKeyAccess("generatorToken()");
     }
 

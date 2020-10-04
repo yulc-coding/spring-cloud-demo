@@ -1,11 +1,11 @@
 
 CREATE TABLE oauth_client_details (
-	client_id VARCHAR ( 32 ) PRIMARY KEY,
+	client_id VARCHAR ( 32 ) PRIMARY KEY COMMENT '客户端ID',
 	resource_ids VARCHAR ( 256 ),
-	client_secret VARCHAR ( 256 ) NOT NULL,
-	scope VARCHAR ( 256 ),
-	authorized_grant_types VARCHAR ( 256 ),
-	web_server_redirect_uri VARCHAR ( 256 ),
+	client_secret VARCHAR ( 256 ) NOT NULL COMMENT '客户端秘钥，此处不能是明文，需要加密',
+	scope VARCHAR ( 256 ) NOT NULL COMMENT '客户端授权范围',
+	authorized_grant_types VARCHAR ( 256 ) COMMENT '客户端授权类型',
+	web_server_redirect_uri VARCHAR ( 256 ) COMMENT '服务端回调地址',
 	authorities VARCHAR ( 256 ),
 	access_token_validity INTEGER,
 	refresh_token_validity INTEGER,

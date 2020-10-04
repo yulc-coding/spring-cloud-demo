@@ -6,7 +6,7 @@ server:
 # 自定义配置
 oauth-store:
   # 客户端信息存储方式：memory -> 内存； db -> 数据库
-  client: memory
+  client: db
   # token存储方式： redis -> redis存放； jwt -> 使用JWT 生成token
   token: redis
 
