@@ -23,7 +23,7 @@ import java.util.List;
 @ConditionalOnProperty(prefix = "oauth-store", name = "client", havingValue = "db")
 @RequestMapping("/auth/client")
 @RestController
-public class ClientInfoController {
+public class ClientJdbcController {
 
     @Autowired
     private JdbcClientDetailsService jdbcClientDetailsService;
