@@ -1,1 +1,34 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /auth-oa
 
+spring:
+  application:
+    name: auth-oa
+  # redis
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    timeout: 3000ms
+    lettuce:
+      pool:
+        max-active: 2
+        max-wait: 3000ms
+        max-idle: 2
+        min-idle: 0
+security:
+  oauth2:
+    client:
+      # 需要和认证服务中的配置一样
+      client-id: client-oa
+      client-secret: $2a$10$OMJ0hSORcRmXSCdSP3DtgexPvArdGexfXqwAVOdH0aB7/pxfUriLi
+      user-authorization-uri: http://localhost:9000/oauth/authorize
+      access-token-uri: http://localhost:9000/oauth/token
+    resource:
+      id: client-oa
+      user-info-uri: user-info
+    authorization:
+      # 服务端接受请求后通过这个地址去认证服务校验token
+      check-token-access: http://localhost:9000/oauth/check_token
