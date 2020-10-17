@@ -45,4 +45,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/**").permitAll();
     }
+
+
+    public static void main(String[] args) {
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String sc = passwordEncoder.encode("oa-secret-8888");
+        System.out.println(sc);
+    }
 }
