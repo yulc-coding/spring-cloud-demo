@@ -6,6 +6,10 @@ server:
 spring:
   application:
     name: auth-oa
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
   # redis
   redis:
     database: 0
