@@ -1,13 +1,13 @@
-package org.ylc.frame.cloud.cmptdubbo;
+package org.ylc.frame.cloud.dubbo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CmptDubboApplicationTests {
+class DubboConsumerApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
