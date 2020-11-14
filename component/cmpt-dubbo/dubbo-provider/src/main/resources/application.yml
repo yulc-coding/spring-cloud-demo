@@ -1,0 +1,23 @@
+server:
+  port: 8849
+spring:
+  application:
+    name: cmpt-dubbo-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+dubbo:
+  scan:
+    # dubbo 服务扫描基础包路径
+    base-packages: org.ylc.frame.cloud.dubbo.api
+  protocol:
+    # 服务暴露协议
+    name: dubbo
+    # 协议端口(-1表示自增端口，从20880开始)
+    port: -1
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services:

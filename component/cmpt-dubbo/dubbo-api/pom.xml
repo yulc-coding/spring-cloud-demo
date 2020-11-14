@@ -11,6 +11,9 @@
     </parent>
 
     <artifactId>dubbo-api</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
     <name>cmpt-dubbo-api</name>
 
 </project>
