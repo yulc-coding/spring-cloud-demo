@@ -1,5 +1,20 @@
 ## OAuth2
 
++--------+                                    +---------------+
+|        | ---(A)-- Authorization Request --> |   Resource    |
+|        | <--(B)-- Authorization Grant ----- |     Owner     |
+|        |                                    +---------------+
+|        |
+|        |                                    +---------------+
+| Client | ---(C)-- Authorization Grant ----> | Authorization |
+|        | <--(D)------ Access Token -------- |     Server    |
+|        |                                    +---------------+
+|        |
+|        |                                    +---------------+
+|        | ---(E)------ Access Token -------> |   Resource    |
+|        | <--(F)--- Protected Resource ----- |    Server     |
++--------+                                    +---------------+
+
 ### auth-server
 认证中心，负责Token的生成、认证，权限校验
 
