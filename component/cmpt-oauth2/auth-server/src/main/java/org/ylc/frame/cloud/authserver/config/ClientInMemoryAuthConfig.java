@@ -45,7 +45,7 @@ public class ClientInMemoryAuthConfig extends AbstractAuthConfig {
                 .authorizedGrantTypes("refresh_token", "authorization_code", "password")
                 // token 的有效期（秒）
                 .accessTokenValiditySeconds(3600)
-                // 刷新Token的有效时间
+                // 刷新Token的有效时间（秒）
                 .refreshTokenValiditySeconds(86400)
                 // 限制客户端访问权限，在换取的 token 的时候会带上 scope 参数，只有在 scopes 定义内的，才可以正常换取 token
                 .scopes("all")

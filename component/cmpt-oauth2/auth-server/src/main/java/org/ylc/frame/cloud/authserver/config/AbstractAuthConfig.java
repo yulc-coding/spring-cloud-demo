@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
  * 代码全万行，注释第一行
  * 注释不规范，同事泪两行
  * <p>
- * 配置
+ * OAuth2 配置文件
  *
  * @author YuLc
  * @version 1.0.0
