@@ -1,6 +1,7 @@
 ## OAuth2
 [参考](https://www.cnblogs.com/panchanggui/p/12222131.html)
 [Gateway参考](https://blog.csdn.net/qq_40369829/article/details/109179049)
+[参考二](https://www.cnblogs.com/fp2952/p/8973613.html)
 
 +--------+                                    +---------------+
 |        | ---(A)-- Authorization Request --> |   Resource    |

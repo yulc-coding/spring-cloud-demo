@@ -29,6 +29,9 @@ public abstract class AbstractAuthConfig extends AuthorizationServerConfigurerAd
     @Autowired
     private TokenStore tokenStore;
 
+    /**
+     * 用来配置授权（authorization）以及令牌（token）的访问端点和令牌服务(token services)
+     */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         // 调用此方法才能支持 password 模式
@@ -39,6 +42,9 @@ public abstract class AbstractAuthConfig extends AuthorizationServerConfigurerAd
                 .tokenStore(tokenStore);
     }
 
+    /**
+     * 用来配置令牌端点(Token Endpoint)的安全约束.
+     */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
         // 允许客户端访问OAuth2授权接口，否则请求Token时会返回401
